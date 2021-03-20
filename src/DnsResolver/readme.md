@@ -74,7 +74,7 @@ branch: ffebe2759a66ebd6ca52288a9eaf1c02f28e3842
 require:
   - $(this-folder)/../readme.azure.noprofile.md
 input-file:
-  - https://github.com/Azure/azure-rest-api-specs-pr/blob/Microsoft.Network-dnsresolver-2020-01-01-preview/specification/dnsresolver/resource-manager/Microsoft.Network/preview/2020-04-01-preview/dnsresolver.json
+  - C:\Networking\DNS\azure-rest-api-specs-pr\specification\dnsresolver\resource-manager\Microsoft.Network\preview\2020-04-01-preview\dnsresolver.json
 
 module-version: 0.1.0
 title: DnsResolver
@@ -96,4 +96,15 @@ directive:
   - where:
       verb: Set
     remove: true
-```
+    # Update the table layout
+  - where:
+      model-name: DnsResolver
+    set:
+      format-table:
+        properties:
+          - Name
+          - Location
+          - Type
+          - VirtualNetworkId
+          - Etag
+  ```
